@@ -1,0 +1,132 @@
+<head>
+<meta charset="utf-8">
+
+
+</head>
+
+<div ng-controller = "liveController">
+	
+	<div class="row">
+		<div class="col-md-8">
+			<div class="panel ">
+				<div class="panel-heading">
+					<h3 class="panel-title">Pozycja GPS</h3>
+					<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+				</div>
+				<div  class="panel-body">
+					<div id = "map"></div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="col-md-4">
+			<div class="panel ">
+				<div class="panel-heading">
+					<h3 class="panel-title">Aktualna sytuacja</h3>
+					<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+				</div>
+				<div  class="panel-body">
+					<table class="table table-hover table-bordered">
+				    	
+				    		<tr>
+				    			<th>Data</th>
+				    			<td>{{trainingDate}}</td>
+				    		</tr>
+				    		
+				    		
+				    		<tr>
+				    			<th>Dystans</th>
+				    			<td>{{totalDistance}} km</td>
+				    		</tr>		
+				    		
+				    		<tr>
+				    			<th>Czas trwania</th>
+				    			<td>{{duration}} (mm:ss)</td>
+				    		</tr>	
+				    		
+				    		
+				    		
+				    		<tr>
+				    			<th>Średnia kadencja</th>
+				    			<td>{{avgBpm}} rpm</td>
+				    		</tr>
+				    		
+				    		
+				    		<tr>
+				    			<th>Średnia prędkość</th>
+				    			<td> {{avgSpeed}} km/h </td>
+				    		</tr>
+				    		
+				    		<tr>
+				    			<th>Przewyższenie</th>
+				    			<td>{{climb}} m</td>
+				    		</tr>
+				    		
+				    		<tr>
+				    			<th>Zjazdy</th>
+				    			<td>{{downhill}} m</td>
+				    		</tr>
+		        
+				        
+	   				 </table>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	
+		
+
+	
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel ">
+				<div class="panel-heading">
+					
+					<h3 id ="chart_name" class="panel-title" >Wysokość n.p.m</h3>
+					<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+				</div>
+				<div  class="panel-body">
+					<div class="row">
+						<button type="button" class="btn btn-default" ng-class="{'btn-primary': displayRpm}" ng-click="toggle(freq_data,['Czas','Kadencja'],[0,300],1)">Kadencja</button>
+						<button type="button" class="btn btn-default" ng-class="{'btn-primary': displaySpeed}" ng-click="toggle(speed_data,['Czas','Prędkość'],[0,50],2)">Prędkość </button>
+						<button type="button" class="btn btn-default" ng-class="{'btn-primary': displayAltitude}" ng-click="toggle(altitude_data,['Czas','Wysokość n.p.m'],[0,400],3)">Wysokość n.p.m </button>
+						<button type="button" class="btn btn-default" ng-class="{'btn-primary': displayHumidity}" ng-click="toggle(humidity_data,['Czas','Wilgotność'],[0,80],4)">Wilgotność </button>
+						<button type="button" class="btn btn-default" ng-class="{'btn-primary': displayTemperature}" ng-click="toggle(temp_data,['Czas','Temperatura'],[-5,40],5)">Temperatura </button>
+					</div>
+					<div id ="div_g_altitude"> </div>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+	
+
+
+</div>
+	
+</div>
+
+
+
+<script>
+	$(document).on('click', '.panel-heading span.clickable', function(e){
+	    var $this = $(this);
+		if(!$this.hasClass('panel-collapsed')) {
+			$this.parents('.panel').find('.panel-body').slideUp();
+			$this.addClass('panel-collapsed');
+			$this.find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+		} else {
+			$this.parents('.panel').find('.panel-body').slideDown();
+			$this.removeClass('panel-collapsed');
+			$this.find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+		}
+	})
+	
+	
+	
+	
+	
+	</script>

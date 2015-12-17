@@ -1,0 +1,48 @@
+<head>
+<meta charset="utf-8">
+
+
+</head>
+<div ng-controller = "trainingsController">
+	<div class = "row">
+	
+	<div class = 'content'>
+		<div class="col-md-12">
+			<div class="panel ">
+				<div  class="panel-body">
+					<table class="table table-hover table-striped">
+	    	<thead>
+	    		<tr >
+	    			<th class="col-md-2">Nr treningu</th>
+	    			<th class="col-md-4">Data </th>
+	    			<th class="col-md-4">Dystans</th>
+	    			<th class="col-md-2">Czas trwania (min:sec)</th>
+	    			
+	    		</tr>
+	        </thead>
+	        <tbody>
+		        <tr ng-repeat="x in trainings">
+		            <td>{{x.id}}</td>
+	    			<td>{{formatDate(x.date)}}</td>
+	    			<td>{{(x.totalDistance/1000).toFixed(3)}} km</td>
+	    			<td>{{time(x.duration)}}</td>
+	    			<td><a href="#/live/?id={{x.id}}">
+	    				<button class="btn btn-default btn-ms"><span class="glyphicon glyphicon-arrow-right"></span></button>
+	    			</a></td>		    			
+		        </tr>
+	        </tbody>
+	    </table>
+				</div>
+			</div>
+		</div>
+	
+	    
+	</div>
+	
+
+
+
+	</div>
+</div>
+
+

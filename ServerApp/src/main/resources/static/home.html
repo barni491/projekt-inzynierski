@@ -1,0 +1,63 @@
+<head>
+<meta charset="utf-8">
+
+
+</head>
+
+<div >
+	
+	<div class="row">
+		<div class="col-md-8">
+			<div class="panel ">
+				<div class="panel-heading">
+					<h3 class="panel-title">Ostatni trening</h3>
+					<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+				</div>
+				<div  class="panel-body">
+					
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="col-md-4">
+			<div class="panel ">
+				<div class="panel-heading">
+					<h3 class="panel-title">Statystyki</h3>
+					<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+				</div>
+				<div  class="panel-body">
+					
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	
+		
+
+	
+	
+</div>
+
+
+
+<script>
+	$(document).on('click', '.panel-heading span.clickable', function(e){
+	    var $this = $(this);
+		if(!$this.hasClass('panel-collapsed')) {
+			$this.parents('.panel').find('.panel-body').slideUp();
+			$this.addClass('panel-collapsed');
+			$this.find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+		} else {
+			$this.parents('.panel').find('.panel-body').slideDown();
+			$this.removeClass('panel-collapsed');
+			$this.find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+		}
+	})
+	
+	
+	
+	
+	
+	</script>

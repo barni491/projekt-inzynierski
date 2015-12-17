@@ -1,0 +1,103 @@
+#map{
+    position: absolute; left: 20px; right: 20px; top: 50px; bottom: 50px;
+/*    box-shadow: 3px 3px 10px gray;*/  
+    }
+    
+.row{
+	margin-top:10px;
+    margin-top:10px;
+    padding: 0 10px;
+}
+
+
+
+  .container {
+    padding: 10px;
+  }
+
+html, body {
+    height: 100%;
+    
+    background-color: #C0C0C0;
+   	background-image:  url(http://www.hdwallpapers.in/walls/bicycle-wide.jpg);
+    background-size:   cover;                   
+    background-repeat: no-repeat;
+    background-position: center center;            
+    background-attachment: fixed;
+}
+
+.clickable{
+    cursor: pointer;   
+}
+
+.navbar-default .navbar-nav > .dropdown > a .caret {
+    border-top-color: #777;
+    border-bottom-color: #777;
+}
+
+
+
+.panel-heading span {
+	margin-top: -20px;
+	font-size: 15px;
+}
+
+.panel-heading {
+	background:#0a68a0;
+
+}
+
+
+.panel {
+	background:#ff0080;
+	background: rgb(43, 43, 34); /* The Fallback */
+  	background: rgba(43, 43, 34, 0.5); 
+	border-style: solid;
+ 
+	
+	border-color: blue;
+
+}
+
+
+table {
+  border-collapse: separate;
+  border-spacing: 0 5px;
+ 
+  
+}
+
+
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: #c0c0c0;
+ }
+ 
+ .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #98bffa;
+}
+
+thead th {
+  background: #0a68a0;
+ 
+  color: white;
+  
+}
+
+th, td {
+    
+    text-align: left;
+    vertical-align: middle;
+}
+
+#div_g,#div_g_kad,#div_g_speed ,#div_g_altitude{ position: absolute; left: 5px; right: 20px; top: 100px; bottom: 20px; }
+#div_g_temp { position: absolute; left: 5px; right: 20px; top: 50px; bottom: 5px; }
+.panel-body {
+	background: none
+	font-size: 110%;
+	min-height:400px;
+	
+    background:#f2f4f4;
+    
+
+}
